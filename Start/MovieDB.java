@@ -14,15 +14,15 @@ import java.util.Properties;
 public class MovieDB {
      
     // JDBC URL, username, and password of PostgreSQL server (TO BE ACCUSTOMED)
-    private static final String URL = "jdbc:postgresql://localhost:5432/movietoacct"; 
+    private static final String URL = "jdbc:postgresql://localhost/moviedb"; 
     private static final String USER = "postgres";
-    private static final String PASSWORD = "2606";
+    private static final String PASSWORD = "css475";
     private static Connection connection = null;
      
     // Functions:
     public static Connection Connect() throws SQLException {
          
-        if(connection != null && !connection.isValid(10000)) {
+        if(connection != null && !connection.isValid(0000)) {
              
             connection = null;
          }
@@ -52,14 +52,14 @@ public class MovieDB {
                  
                 System.out.println("Failed connecting to DB !");
  
-                if(tries >= 5) {
+                if(tries >= 1) {
                      
                     connection = null;
                     throw e;
                 }
  
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(10000);
 
                 } catch (InterruptedException e1) {
                      
